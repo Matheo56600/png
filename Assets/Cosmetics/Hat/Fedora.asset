@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: Fedora
+  m_EditorClassIdentifier: 
+  itemdefid: 123
+  displayName: Fedora
+  description: Very polite people should wear this hat
+  tag: 
+  type: 3
+  inventoryType: 0
+  rarity: 3
+  icon: {fileID: 2800000, guid: 3ead02fe86660594a83df67c0a3afe14, type: 3}
+  mesh: {fileID: -723488860570065570, guid: 137e5b7d27daa9b43bc1a19a25888c7e, type: 3}
+  materials:
+  - {fileID: 2100000, guid: ce125ea00ccdfa242a0b17b2b8766f72, type: 2}
+  - {fileID: 2100000, guid: 6b93c6273e9ca8c42b6dbf4c018d4347, type: 2}
+  index: 7
+  alpha: 1
+  size: {x: 7, y: 7, z: 7}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  sizeMultiplier: 1
+  relatedItem: []
+  canApplyParticle: 1
+  recyclable: 1

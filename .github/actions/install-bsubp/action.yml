@@ -1,0 +1,46 @@
+name: Install Banana Shooter Unlicensed Backup CLI
+description: Downloads, verifies, and installs the bsubp CLI into ~/.local/bin and adds it to GITHUB_PATH.
+
+runs:
+  using: composite
+  steps:
+    - name: Install bsubp
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        if [ "${{ runner.os }}" = "Windows" ]; then
+          ARCHIVE="bsubp-x86_64-pc-windows-msvc.zip"
+          EXPECTED_SHA256="19bf8213133082d28347c29472171e63af82857c84dd941d003c46fab30d3eb5"
+        elif [ "${{ runner.os }}" = "macOS" ]; then
+          ARCHIVE="bsubp-x86_64-apple-darwin.tar.gz"
+          EXPECTED_SHA256="3981a7e58b31dd10605b9bd5d11a671506829c72deb54aacd9ebda35fae0e78d"
+        else
+          ARCHIVE="bsubp-x86_64-unknown-linux-gnu.tar.gz"
+          EXPECTED_SHA256="2bac353ffe8630f995f5ba37283e57039bf4a10d73a5ea9d32a379107ff84b28"
+        fi
+
+        INSTALL_DIR="$HOME/.local/bin"
+        mkdir -p "$INSTALL_DIR"
+
+        curl -fsSL -o "$ARCHIVE" \
+          "https://github.com/Squalive/bsubp/releases/download/v1.1.0/${ARCHIVE}"
+
+        echo "$EXPECTED_SHA256  $ARCHIVE" | sha256sum -c -
+
+        if [[ "$ARCHIVE" == *.zip ]]; then
+          7z x "$ARCHIVE" -o"$INSTALL_DIR" -y > /dev/null
+          rm "$ARCHIVE"
+        else
+          tar -xzf "$ARCHIVE" -C "$INSTALL_DIR"
+          rm "$ARCHIVE"
+        fi
+
+        chmod +x "$INSTALL_DIR"/bsubp* 2>/dev/null || true
+        ls -la "$INSTALL_DIR"
+
+        if [ "${{ runner.os }}" = "Windows" ]; then
+          cygpath -w "$INSTALL_DIR" >> "$GITHUB_PATH"
+        else
+          echo "$INSTALL_DIR" >> "$GITHUB_PATH"
+        fi

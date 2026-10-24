@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83b20d2bbbdd48f087e7fd02d27f4139, type: 3}
+  m_Name: banana_sneakers
+  m_EditorClassIdentifier: 
+  itemdefid: 209
+  displayName: Banana Sneakers
+  description: 
+  tag: 
+  type: 5
+  inventoryType: 0
+  rarity: 0
+  icon: {fileID: 2800000, guid: 609ea94295c702340b078e38e22fc8a1, type: 3}
+  mesh: {fileID: -5495902117074765545, guid: 63fbe5d07a3e60848952288cbf6d0dda, type: 3}
+  materials:
+  - {fileID: 2100000, guid: eb68e38e486728441810f28bd04b6a5c, type: 2}
+  - {fileID: 2100000, guid: 239016ef489a33b4ba3bb9104c3631b4, type: 2}
+  - {fileID: 2100000, guid: 1c56fdbbd0fdd64469cbcd18f751023b, type: 2}
+  index: 5
+  alpha: 1
+  size: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 0, z: 0}
+  defaultRotation: {x: -90, y: 0, z: 0}
+  sizeMultiplier: 1
+  relatedItem: []
+  canApplyParticle: 1
+  recyclable: 1
